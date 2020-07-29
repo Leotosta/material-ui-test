@@ -3,23 +3,15 @@ import { Grid } from '@material-ui/core'
 import Header from './header'
 import Content from '../stuffs/content'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { makeStyles } from '@material-ui/styles'
+// import { makeStyles } from '@material-ui/styles'
+import global from '../global'
 
-const useStyles = makeStyles( () => ({
-  forLoading: {
-    position: 'absolute',
-    left: '50vw',
-    top: '40vh'
-  }
-
-  
-}))
 
 function Gridd() {
   //classesNames 
   const [ isLoading, setLoading ] = useState(true)
 
-  const classes = useStyles()
+  const classes = global()
 
   useEffect(() => {
     setLoading(false)
