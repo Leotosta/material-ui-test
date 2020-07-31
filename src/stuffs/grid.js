@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, Button } from '@material-ui/core'
 import Header from './header'
 import Content from '../stuffs/content'
 import CircularProgress from '@material-ui/core/CircularProgress'
 // import { makeStyles } from '@material-ui/styles'
+import { Link } from 'react-router-dom'
 import global from '../global'
 
 
@@ -21,6 +22,7 @@ function Gridd() {
     return <CircularProgress className={classes.forLoading} color="primary" />
 
     return (
+      <>
       <Grid container direction="column" spacing={2} >
         <Grid item > 
             <Header />
@@ -29,8 +31,12 @@ function Gridd() {
         <Grid item container >
             <Content />
         </Grid>
-
       </Grid>
+
+      <Link to="/layout" style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="primary" > Layout </Button>
+      </Link>
+      </>
     )
 }
 
